@@ -8,6 +8,8 @@ import { AboutPage } from '../pages/about/about';
 import { MenuPage } from '../pages/menu/menu';
 import { ContactPage } from '../pages/contact/contact';
 import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -39,6 +41,11 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  openLogin() {
+    let modal = this.modalCtrl.create(LoginPage);
+    modal.present();
   }
 
   openPage(page) {

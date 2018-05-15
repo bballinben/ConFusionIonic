@@ -22,6 +22,7 @@ import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-htt
 
 import { baseURL } from '../shared/baseurl';
 import { FavoriteProvider } from '../providers/favorite/favorite';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpModule
   ],
   bootstrap: [IonicApp],
