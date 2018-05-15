@@ -1,41 +1,25 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { IonicPage, NavController, NavParams, ItemSliding, ToastController, LoadingController, AlertController } from 'ionic-angular';
-import { FavoriteProvider } from '../../providers/favorite/favorite';
-import { Dish } from '../../shared/dish';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the FavoritesPage page.
+ * Generated class for the CommentPage page.
  *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
  */
+
 @IonicPage()
 @Component({
-  selector: 'page-favorites',
-  templateUrl: 'favorites.html',
+  selector: 'page-comment',
+  templateUrl: 'comment.html',
 })
-export class FavoritesPage implements OnInit {
+export class CommentPage {
 
-  favorites: Dish[];
-  errMess: string;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    private favoriteservice: FavoriteProvider,
-    @Inject('BaseURL') private BaseURL,
-    public toastCtrl: ToastController,
-    private loadingCtrl: LoadingController,
-    private alertCtrl: AlertController
-  ) {
-  }
-
-  ngOnInit() {
-    this.favoriteservice.getFavorites()
-      .subscribe(favorites => this.favorites = favorites,
-        errmess => this.errMess = errmess);
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FavoritesPage');
+    console.log('ionViewDidLoad CommentPage');
   }
 
   deleteFavorite(item: ItemSliding, id: number) {
